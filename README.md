@@ -16,7 +16,9 @@ Pull Request (PR): Khi hoàn thành một tính năng, tạo PR từ branch feat
 Đặt tên file theo chuẩn camelCase nhưng có viết hoa chữ đầu
 
 Cấu trúc thư mục: 
+
 /weather-app
+
     /backend
         /models
             model-weather.cs
