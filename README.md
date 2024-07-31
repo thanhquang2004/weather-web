@@ -3,9 +3,13 @@
 Chia branch:
 
   main: Branch chính, chứa mã ổn định và đã được kiểm tra.
+  
   dev: Branch phát triển chung, nơi các tính năng mới sẽ được tích hợp trước khi đưa vào main.
+  
   backend/{name feature}: Branchlàm việc với phần backend.
+  
   frontend/{name feature}: Branch làm việc với phần frontend.
+  
   realtime: Branch làm việc với phần xử lý dữ liệu real-time
 
 Thiết lập workflow:
