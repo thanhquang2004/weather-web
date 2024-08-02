@@ -23,7 +23,7 @@ Cấu trúc thư mục:
 
 /weather-app
 
-    /backend
+    -backend
         /models
             model-weather.cs
             model-forecast.cs
@@ -36,7 +36,7 @@ Cấu trúc thư mục:
         /repositories
             repository-weather.cs
             repository-forecast.cs
-    /frontend
+    -frontend
         /components
             component-weather-display.cshtml
             component-forecast-table.cshtml
