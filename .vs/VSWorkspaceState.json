@@ -3,7 +3,7 @@
     "",
     "\\weather-web",
     "\\weather-web\\backend",
-    "\\weather-web\\backend\\services",
+    "\\weather-web\\backend\\models",
     "\\weather-web\\Controllers",
     "\\weather-web\\Models",
     "\\weather-web\\Views",
@@ -11,6 +11,6 @@
     "\\weather-web\\wwwroot",
     "\\weather-web\\wwwroot\\lib"
   ],
-  "SelectedNode": "\\weather-web\\backend\\services\\WeatherService.cs",
+  "SelectedNode": "\\weather-web.sln",
   "PreviewInSolutionExplorer": false
 }

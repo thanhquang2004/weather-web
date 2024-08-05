@@ -24,6 +24,7 @@
     {
         public string text { get; set; }
         // Biến chứa thông tin thời tiết : EX : Cloudy , Moderate rain
+        public string icon { get; set; }
         // Dùng để chọn icon thời tiết
     }
 

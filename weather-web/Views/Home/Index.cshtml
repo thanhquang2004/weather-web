@@ -23,6 +23,7 @@
     <h5>@Model.Current.is_day</h5>
     <h5>@Model.Current.vis_km</h5>
     <h5>@Model.Current.wind_kph</h5>
+    <img src="@($"https:{Model.Current.condition.icon}")" alt="Current weather condition" />
 
     if (ViewData["HourlyForecast"] != null)
         {
