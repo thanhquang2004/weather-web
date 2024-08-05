@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\weather-web",
+    "\\weather-web\\backend",
+    "\\weather-web\\backend\\services",
+    "\\weather-web\\Controllers",
+    "\\weather-web\\Models",
+    "\\weather-web\\Views",
+    "\\weather-web\\Views\\Home",
+    "\\weather-web\\wwwroot",
+    "\\weather-web\\wwwroot\\lib"
+  ],
+  "SelectedNode": "\\weather-web\\backend\\services\\WeatherService.cs",
+  "PreviewInSolutionExplorer": false
+}

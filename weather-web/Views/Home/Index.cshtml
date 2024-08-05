@@ -1,8 +1,51 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@model backend.models.WeatherModel;
+@using backend.models;
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form asp-controller="Home" asp-action="GetWeatherDetails" method="post">
+        <div>
+            <input type="text" name="location" />
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+    <br />
+    @if (Model != null)
+    {
+    <h5>@Model.Location.name</h5>
+    <h5>@Model.Location.country</h5>
+    <h5>@Model.Location.localtime</h5>
+    <h5>@Model.Current.temp_c</h5>
+    <h5>@Model.Current.temp_f</h5>
+    <h5>@Model.Current.humidity</h5>
+    <h5>@Model.Current.is_day</h5>
+    <h5>@Model.Current.vis_km</h5>
+    <h5>@Model.Current.wind_kph</h5>
+
+    if (ViewData["HourlyForecast"] != null)
+        {
+            var hourlyForecast = (List<Hour>)ViewData["HourlyForecast"];
+    <h3>Hourly Forecast</h3>
+    <ul>
+        @foreach (var hour in hourlyForecast)
+                {
+        <li>
+            <strong>@hour.time</strong>: @hour.condition.text
+            <br />
+            Temp: @hour.temp_c°C (@hour.temp_f)°F
+        </li>
+                }
+        @foreach (var day in Model.Forecast.forecastday)
+         {
+        <li>
+            <strong>@day.date</strong>: @day.day.condition.text
+            <br />
+            Avg Temp: @day.day.avgtemp_c°C (@day.day.avgtemp_f)°F
+        </li>
+         }
+    </ul>
+        }
+    }
 </div>
