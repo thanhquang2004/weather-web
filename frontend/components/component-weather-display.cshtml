@@ -1,4 +1,4 @@
-﻿@{
+@{
     Layout = null;
 }
 
@@ -9,13 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Weather App displaying current weather and forecast information.">
     <title>Weather App</title>
-    <link rel="stylesheet" type="text/css" href="/css/site.css" />
+    <link rel="stylesheet" href="~/styles/StyleWeatherDisplay.css">
 </head>
 <body>
     <div class="container">
         <header>
             <div class="search-bar">
-                <input type="text" class="search-box" placeholder="Search...">
+                <input type="text" placeholder="Search...">
                 <button class="search-button"><img src="~/images/search-icon.png" alt="Search Icon"></button>
                 <div class="temp-toggle">
                     <span>°C</span>
@@ -26,14 +26,14 @@
         <main>
             <section class="weather-main">
                 <div class="weather-main-content">
-                    <img class="weather-icon" src="~/images/cloudy-icon.png" alt="Cloudy Weather Icon">
-                    <div>
+                    <div class="weather-icon">
+                        <img src="~/images/cloudy-icon.png" alt="Cloudy Weather Icon">
                         <div class="temperature">16°C</div>
                         <div class="condition">Cloudy</div>
                     </div>
                 </div>
                 <div class="location-time">
-                    <div class="location">Lima</div>
+                    <div class="location">Lima</div><br/>
                     <div class="time">16:47</div>
                 </div>
             </section>
@@ -55,38 +55,38 @@
                 <section class="weather-forecast">
                     <div class="forecast-item">
                         <img src="~/images/rain-icon.png" alt="Rain Icon">
-                        <span class="temperature">16°C</span>
-                        <span class="time">00:00</span>
+                        <span>16°C</span>
+                        <span>00:00</span>
                     </div>
                     <div class="forecast-item">
                         <img src="~/images/partly-cloudy-icon.png" alt="Partly Cloudy Icon">
-                        <span class="temperature">16°C</span>
-                        <span class="time">06:30</span>
+                        <span>16°C</span>
+                        <span>06:30</span>
                     </div>
                     <div class="forecast-item">
                         <img src="~/images/sunny-icon.png" alt="Sunny Icon">
-                        <span class="temperature">16°C</span>
-                        <span class="time">10:00</span>
+                        <span>16°C</span>
+                        <span>10:00</span>
                     </div>
                     <div class="forecast-item">
                         <img src="~/images/cloudy-icon.png" alt="Cloudy Icon">
-                        <span class="temperature">16°C</span>
-                        <span class="time">12:00</span>
+                        <span>16°C</span>
+                        <span>12:00</span>
                     </div>
                     <div class="forecast-item">
                         <img src="~/images/rain-icon.png" alt="Rain Icon">
-                        <span class="temperature">16°C</span>
-                        <span class="time">15:30</span>
+                        <span>16°C</span>
+                        <span>15:30</span>
                     </div>
                     <div class="forecast-item">
                         <img src="~/images/rain-icon.png" alt="Rain Icon">
-                        <span class="temperature">16°C</span>
-                        <span class="time">21:47</span>
+                        <span>16°C</span>
+                        <span>21:47</span>
                     </div>
                     <div class="forecast-item">
                         <img src="~/images/rain-icon.png" alt="Rain Icon">
-                        <span class="temperature">16°C</span>
-                        <span class="time">23:00</span>
+                        <span>16°C</span>
+                        <span>23:00</span>
                     </div>
                 </section>
             </div>
