@@ -23,6 +23,11 @@ namespace weather_web.Controllers
         {
             WeatherService weatherService = new WeatherService();
             // khoi tao Service
+            if (string.IsNullOrEmpty(location))
+            {
+                location = "Ho Chi Minh City";
+            }
+            // set defaut location la Ho Chi Minh City
             var response = await weatherService.GetWeatherData(location);
             // fetch data voi location duoc nhap
             if (response.IsSuccess)
