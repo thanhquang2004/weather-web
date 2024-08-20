@@ -5,122 +5,156 @@
 @using backend.models;
 
 <head>
-    <style>
-        .text-center {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        h1.display-4 {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 20px;
-        }
-
-        form {
-            margin-bottom: 20px;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            font-size: 1rem;
-            width: 60%;
-            margin-right: 10px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            padding: 10px 20px;
-            font-size: 1rem;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-            input[type="submit"]:hover {
-                background-color: #0056b3;
-            }
-
-        h5 {
-            font-size: 1.25rem;
-            margin: 10px 0;
-            color: #343a40;
-        }
-
-        img {
-            margin-top: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-            ul li {
-                background-color: #f8f9fa;
-                padding: 10px;
-                margin-bottom: 10px;
-                border-radius: 4px;
-                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            }
-
-                ul li strong {
-                    color: #007bff;
-                    font-size: 1.1rem;
-                }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <form asp-controller="Home" asp-action="GetWeatherDetails" method="post">
-        <div>
-            <input type="text" name="location" />
-            <input type="submit" value="Submit" />
-        </div>
-    </form>
-    <br />
-    @if (Model != null)
-    {
-    <h5>@Model.Location.name</h5>
-    <h5>@Model.Location.country</h5>
-    <h5>@Model.Location.localtime</h5>
-    <h5>@Model.Current.temp_c</h5>
-    <h5>@Model.Current.temp_f</h5>
-    <h5>@Model.Current.humidity</h5>
-    <h5>@Model.Current.is_day</h5>
-    <h5>@Model.Current.vis_km</h5>
-    <h5>@Model.Current.wind_kph</h5>
-    <img src="@($"https:{Model.Current.condition.icon}")" alt="Current weather condition" />
 
-    if (ViewData["HourlyForecast"] != null)
-        {
-            var hourlyForecast = (List<Hour>)ViewData["HourlyForecast"];
-    <h3>Hourly Forecast</h3>
-    <ul>
-        @foreach (var hour in hourlyForecast)
-                {
-        <li>
-            <strong>@hour.time</strong>: @hour.condition.text
-            <br />
-            Temp: @hour.temp_c°C (@hour.temp_f)°F
-        </li>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <form asp-controller="Home" asp-action="GetWeatherDetails" method="post">
+            <div>
+                <input type="text" name="location" /> <!-- Truong nhap ten vi tri -->
+                <input type="submit" value="Submit" /> <!-- Nut gui yeu cau -->
+            </div>
+        </form>
+        <br />
+        <div id="weatherContainer">
+            @if (Model != null)
+            {
+                <div class="weather-container">
+                    <div class="main-info">
+                        <section class="mai-info-content">
+                            <div class="main-icon">
+                                <img src="@($"https:{Model.Current.condition.icon}")" alt="Weather icon" /> <!-- Hình ảnh icon thời tiết -->
+                            </div>
+                            <div class="temp-details">
+                                <h1>@Model.Current.temp_c°C</h1> <!-- Nhiệt độ hiện tại -->
+                                <h5>@Model.Current.condition.text</h5> <!-- Trạng thái thời tiết -->
+                            </div>
+                        </section>
+                        <div class="location-time">
+                            <h2>@Model.Location.name</h2> <!-- Tên vị trí -->
+                            <h5>@Model.Location.localtime</h5> <!-- Thời gian hiện tại -->
+                        </div>
+                    </div>
+                    <div class="details-forecast-container">
+                        <div class="additional-info">
+                            <div class="detail-item">
+                                <img src="@($"https:{Model.Current.condition.icon}")" alt="Humidity" /> <!-- Hình ảnh độ ẩm -->
+                                <h5>@Model.Current.humidity%</h5> <!-- Độ ẩm -->
+                            </div>
+                            <div class="detail-item">
+                                <img src="@($"https:{Model.Current.condition.icon}")" alt="Wind" /> <!-- Hình ảnh gió -->
+                                <h5>@Model.Current.wind_kph km/h</h5> <!-- Tốc độ gió -->
+                            </div>
+                            <div class="detail-item">
+                                <img src="@($"https:{Model.Current.condition.text}")" alt="Visibility" /> <!-- Hình ảnh tầm nhìn -->
+                                <h5>@Model.Current.vis_km km</h5> <!-- Tầm nhìn -->
+                            </div>
+                        </div>
+
+                        @if (ViewData["HourlyForecast"] != null)
+                        {
+                            // Lấy dữ liệu dự đoán thời tiết theo giờ từ ViewData và ép kiểu thành danh sách các đối tượng Hour
+                            var hourlyForecast = (List<Hour>)ViewData["HourlyForecast"];
+                            <h3>Hourly Forecast</h3>
+                            <div class="hourly-forecast">
+                                @foreach (var hour in hourlyForecast)
+                                {
+                                    <div class="hourly-item">
+                                        <div class="hour-time">@hour.time</div> <!-- Hiển thị thời gian dự đoán -->
+                                        <div class="hour-icon">
+                                            <img src="@($"https:{hour.condition.icon}")" alt="@hour.condition.text" /> <!-- Hiển thị biểu tượng thời tiết -->
+                                        </div>
+                                        <div class="hour-temp">@hour.temp_c°C (@hour.temp_f)°F</div> <!-- Hiển thị nhiệt độ theo cả độ C và độ F -->
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </div>
+
+                    <!-- Kiểm tra xem có dữ liệu dự đoán thời tiết theo ngày không -->
+                    @if (Model.Forecast != null && Model.Forecast.forecastday != null)
+                    {
+                        <h3 class="forecast-title">Daily forecast</h3>
+                        <ul class="forecast-list">
+                            @foreach (var day in Model.Forecast.forecastday)
+                            {
+                                <li class="forecast-item">
+                                    <div class="forecast-icon">
+                                        <img src="@($"https:{day.day.condition.icon}")" alt="@day.day.condition.text" /> <!-- Weather icon -->
+                                    </div>
+                                    <strong class="forecast-date">@day.date</strong>: @day.day.condition.text
+                                    <br />
+                                    Avg Temp: @day.day.avgtemp_c°C (@day.day.avgtemp_f)°F
+                                </li>
+                            }
+                        </ul>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+
+    @section Scripts {
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.7/signalr.min.js"></script>
+        <script type="text/javascript">
+            const connection = new signalR.HubConnectionBuilder().withUrl("/weatherhub").build();
+
+            connection.on("ReceiveWeatherUpdate", function (location, weatherData) {
+                console.log("Location: " + location);
+                console.log("Weather Data: ", weatherData);
+
+                // Cập nhật giao diện người dùng với dữ liệu thời tiết mới
+                const weatherContainer = document.getElementById("weatherContainer");
+                if (weatherContainer) {
+                    weatherContainer.innerHTML = `
+                                    <div class="weather-container">
+                                    <h1>Vcllllllllll</h1>
+                                        <div class="main-info">
+                                            <section class="mai-info-content">
+                                                <div class="main-icon">
+                                                    <img src="https:${weatherData.current.condition.icon}" alt="Weather icon" />
+                                                </div>
+                                                <div class="temp-details">
+                                                    <h1>${weatherData.current.temp_c}°C</h1>
+                                                    <h5>${weatherData.current.condition.text}</h5>
+                                                </div>
+                                            </section>
+                                            <div class="location-time">
+                                                <h2>${weatherData.location.name}</h2>
+                                                <h5>${weatherData.location.localtime}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="details-forecast-container">
+                                            <div class="additional-info">
+                                                <div class="detail-item">
+                                                    <img src="https:${weatherData.current.condition.icon}" alt="Humidity" />
+                                                    <h5>${weatherData.current.humidity}%</h5>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <img src="https:${weatherData.current.condition.icon}" alt="Wind" />
+                                                    <h5>${weatherData.current.wind_kph} km/h</h5>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <img src="https:${weatherData.current.condition.text}" alt="Visibility" />
+                                                    <h5>${weatherData.current.vis_km} km</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
                 }
-        @foreach (var day in Model.Forecast.forecastday)
-         {
-        <li>
-            <strong>@day.date</strong>: @day.day.condition.text
-            <br />
-            Avg Temp: @day.day.avgtemp_c°C (@day.day.avgtemp_f)°F
-        </li>
-         }
-    </ul>
-        }
+            });
+
+            connection.start().then(funtion () {
+                console.log("Connected")
+            }).catch(function (err) {
+                return console.error(err.toString());
+            });
+        </script>
     }
-</div>
+</body>

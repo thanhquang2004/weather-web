@@ -1,22 +1,297 @@
+﻿
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Centered Text Section */
+.text-center {
+    padding: 20px;
+    width: 100%; /* Set width to 100% */
+    margin: 0; /* Remove auto margin */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+
+h1.display-4 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+h5 {
+    font-size: 1.25rem;
+    margin: 10px 0;
+    color: #343a40;
+}
+
+img {
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+    ul li {
+        background-color: #f8f9fa;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        ul li strong {
+            color: #007bff;
+            font-size: 1.1rem;
+        }
+
+/* Weather Container */
+.weather-container {
+    max-width: 100%;
+    width: 1440px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 40px;
+    margin: 0 auto;
+}
+
+.main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0;
+    border-bottom: 1px solid #ddd;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px;
+    padding-bottom: 10px;
+}
+
+.main-info-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-left: 20px;
+}
+
+.main-icon img {
+    width: 100px;
+    height: 100px;
+}
+
+.location-time {
+    text-align: right;
+    margin-right: 50px;
+}
+
+.temp-details h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.location-time {
+    text-align: right;
+    font-size: 20px;
+}
+
+.details-forecast-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    margin-bottom: 1px;
+}
+
+.additional-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    border: 1.5px solid #ddd; /* Thêm viền */
+    border-radius: 8px; /* Bo góc tròn cho weather-details */
+    box-shadow: 1px 1px 1px;
+    margin-right: 10px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #888;
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    text-align: center;
+    flex: 1;
+}
+
+    .detail-item img {
+        width: 50px; /* Size of the icons */
+        margin-bottom: 5px;
+    }
+
+    .detail-item h5 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+.hourly-forecast {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling for hourly forecast */
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+    margin-bottom: 10px;
+}
+
+.hourly-item {
+    text-align: center;
+    min-width: 70px; /* Minimum width for each hourly forecast item */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hour-time, .hour-temp {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.hour-icon img {
+    width: 30px; /* Size of the hourly forecast icons */
+}
+
+h3 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px;
+    padding-bottom: 5px;
+}
+
+/* Daily Forecast Section */
+.forecast-title {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.forecast-list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-right: 1px solid #ddd;
+    border: 1.5px solid #ddd; /* Thêm viền */
+    border-radius: 8px; /* Bo góc tròn cho weather-details */
+    box-shadow: 1px 1px 1px;
+}
+
+.forecast-item {
+    border-radius: 8px;
+    padding: 0 0;
+    width: 100%;
+    text-align: center;
+    margin: 0 0.5rem;
+}
+
+
+.forecast-date {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ffd700; /* Gold color for the date */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .forecast-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .forecast-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .weather-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .additional-info {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hourly-forecast {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
 }

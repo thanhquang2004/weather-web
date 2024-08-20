@@ -1,7 +1,23 @@
+﻿using weather_web.Realtime;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSignalR();  // Thêm SignalR
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder =>
+        {
+            builder.WithOrigins("https://localhost:7105") // Địa chỉ của ứng dụng client
+                   .AllowAnyHeader()
+                   .AllowAnyMethod()
+                   .AllowCredentials();
+        });
+});
+
 
 var app = builder.Build();
 
@@ -23,5 +39,9 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapHub<WeatherHub>("/weatherhub");
+
+
 
 app.Run();
