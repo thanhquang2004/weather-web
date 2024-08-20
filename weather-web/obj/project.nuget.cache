@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MZXotnObFOENM54FliP7J6nxLPzvdViNyOwdDbwrU7XEI3zWKswXOy1uYD9BhBeUGK6MbFYPqyL+o1+WgeqPZg==",
+  "dgSpecHash": "JN16IAyuq0s=",
   "success": true,
-  "projectFilePath": "/home/quangthanh/RiderProjects/weather-web/weather-web/weather-web.csproj",
+  "projectFilePath": "E:\\UTH\\LTMang\\wether-web\\weather-web\\weather-web.csproj",
   "expectedPackageFiles": [
-    "/home/quangthanh/.nuget/packages/flurl/4.0.0/flurl.4.0.0.nupkg.sha512",
-    "/home/quangthanh/.nuget/packages/flurl.http/4.0.2/flurl.http.4.0.2.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\flurl\\4.0.0\\flurl.4.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\flurl.http\\4.0.2\\flurl.http.4.0.2.nupkg.sha512"
   ],
   "logs": []
 }

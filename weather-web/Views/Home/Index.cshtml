@@ -3,50 +3,99 @@
 }
 @model backend.models.WeatherModel;
 @using backend.models;
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+
+</head>
+
+<body>
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <form asp-controller="Home" asp-action="GetWeatherDetails" method="post">
         <div>
-            <input type="text" name="location" />
-            <input type="submit" value="Submit" />
+            <input type="text" name="location" /> <!-- Truong nhap ten vi tri -->
+            <input type="submit" value="Submit" /> <!-- Nut gui yeu cau -->
         </div>
     </form>
     <br />
     @if (Model != null)
     {
-    <h5>@Model.Location.name</h5>
-    <h5>@Model.Location.country</h5>
-    <h5>@Model.Location.localtime</h5>
-    <h5>@Model.Current.temp_c</h5>
-    <h5>@Model.Current.temp_f</h5>
-    <h5>@Model.Current.humidity</h5>
-    <h5>@Model.Current.is_day</h5>
-    <h5>@Model.Current.vis_km</h5>
-    <h5>@Model.Current.wind_kph</h5>
-    <img src="@($"https:{Model.Current.condition.icon}")" alt="Current weather condition" />
+            <div class="weather-container">
+                <div class="main-info">
+                    <section class="mai-info-content ">
+                    <div class="main-icon">
+                        <img src="@($"https:{Model.Current.condition.icon}")" alt="Weather icon" /> <!-- Hình ảnh icon thời tiết -->
+                    </div>
+                    <div class="temp-details">
+                        <h1>@Model.Current.temp_c°C</h1> <!-- Nhiệt độ hiện tại -->
+                        <h5>@Model.Current.condition.text</h5> <!-- Trạng thái thời tiết -->
+                    </div>
+                    </section>
+                    <div class="location-time">
+                        <h2>@Model.Location.name</h2> <!-- Tên vị trí -->
+                        <h5>@Model.Location.localtime</h5> <!-- Thời gian hiện tại -->
+                    </div>
+                </div>
+                <div class="details-forecast-container">
+                <div class="additional-info">
+                        <div class="detail-item">
+                        <img src="@($"https:{Model.Current.condition.icon}")" alt="Humidity" /> <!-- Hình ảnh độ ẩm -->
+                        <h5>@Model.Current.humidity%</h5> <!-- Độ ẩm -->
+                    </div>
+                        <div class="detail-item">
+                        <img src="@($"https:{Model.Current.condition.icon}")" alt="Wind" /> <!-- Hình ảnh gió -->
+                        <h5>@Model.Current.wind_kph km/h</h5> <!-- Tốc độ gió -->
+                    </div>
+                    <div class="detail-item">
+                            <img src="@($"https:{Model.Current.condition.win}")" alt="Visibility" /> <!-- Hình ảnh tầm nhìn -->
+                        <h5>@Model.Current.vis_km km</h5> <!-- Tầm nhìn -->
+                    </div>
+                </div>
 
-    if (ViewData["HourlyForecast"] != null)
-        {
-            var hourlyForecast = (List<Hour>)ViewData["HourlyForecast"];
-    <h3>Hourly Forecast</h3>
-    <ul>
-        @foreach (var hour in hourlyForecast)
+                    @if (ViewData["HourlyForecast"] != null)
+                    {
+                        // Lấy dữ liệu dự đoán thời tiết theo giờ từ ViewData và ép kiểu thành danh sách các đối tượng Hour
+                        var hourlyForecast = (List<Hour>)ViewData["HourlyForecast"];
+                        <h3>Hourly Forecast</h3>
+                        <div class="hourly-forecast">
+                            @foreach (var hour in hourlyForecast)
+                            {
+                                <div class="hourly-item">
+                                    <div class="hour-time">@hour.time</div> <!-- Hiển thị thời gian dự đoán -->
+                                    <div class="hour-icon">
+                                        <img src="path/to/icon/@hour.condition.icon" alt="@hour.condition.text" /> <!-- Hiển thị biểu tượng thời tiết -->
+                                    </div>
+                                    <div class="hour-temp">@hour.temp_c°C (@hour.temp_f)°F</div> <!-- Hiển thị nhiệt độ theo cả độ C và độ F -->
+                                </div>
+                            }
+                        </div>
+                    }
+                    </div>
+
+                    <!--Kiểm tra xem có dữ liệu dự đoán thời tiết theo ngày không-->
+                @if (Model.Forecast != null && Model.Forecast.forecastday != null)
                 {
-        <li>
-            <strong>@hour.time</strong>: @hour.condition.text
-            <br />
-            Temp: @hour.temp_c°C (@hour.temp_f)°F
-        </li>
+                    <h3 class="forecast-title">Daily forecast</h3>
+                    <ul class="forecast-list">
+                        @foreach (var day in Model.Forecast.forecastday)
+                        {
+                            <li class="forecast-item">
+                                <div class="forecast-icon">
+                                    <img src="@($"https:{day.day.condition.icon}")" alt="@day.day.condition.text" /> <!-- Weather icon -->
+                                </div>
+                                <strong class="forecast-date">@day.date</strong>: @day.day.condition.text
+                                <br />
+                                Avg Temp: @day.day.avgtemp_c°C (@day.day.avgtemp_f)°F
+                            </li>
+                        }
+                    </ul>
                 }
-        @foreach (var day in Model.Forecast.forecastday)
-         {
-        <li>
-            <strong>@day.date</strong>: @day.day.condition.text
-            <br />
-            Avg Temp: @day.day.avgtemp_c°C (@day.day.avgtemp_f)°F
-        </li>
-         }
-    </ul>
-        }
+                </div>
     }
 </div>
+
+</div>
+</body>

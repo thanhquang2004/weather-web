@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="frontend\scripts\" />
+      <Folder Include="frontend\styles\" />
     </ItemGroup>
 
 </Project>

@@ -26,6 +26,8 @@
         // Biến chứa thông tin thời tiết : EX : Cloudy , Moderate rain
         public string icon { get; set; }
         // Dùng để chọn icon thời tiết
+        public float win {  get; set; }
+        // Dùng để chọn icon gió
     }
 
     public class Current
@@ -40,7 +42,7 @@
         // Biến chứa vận tốc gió 
         public int humidity { get; set; }
         // Biến chứa độ ẩm
-        public float vis_km { get; set; }
+        public float vis_km { get; set; }   
         // Biến chứa tầm nhìn
         public Condition condition { get; set; }
         // class chứa thông tin thời tiết đề cập phía trên
