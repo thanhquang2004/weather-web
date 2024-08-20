@@ -9,7 +9,7 @@ namespace weather_web.backend
 		private static readonly string WeatherApiUrl = "http://api.weatherapi.com/v1/forecast.json";
 
 		// API key for the weather service, valid for 14 days
-		private static readonly string WeatherApiKey = "5d5d393f3c9647b090793400242707";
+		private static readonly string WeatherApiKey = "f75c25d367144bb08af24259242008 ";
 
 		public async Task<ResponseModel> GetWeatherData(string location)
 		{

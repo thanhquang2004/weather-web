@@ -13,7 +13,9 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("weather-web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e07d49e9bb916556d45a89ad376cb96fe8c5b825")]
+
 [assembly: System.Reflection.AssemblyProductAttribute("weather-web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("weather-web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
