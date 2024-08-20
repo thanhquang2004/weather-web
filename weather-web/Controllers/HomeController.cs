@@ -4,7 +4,6 @@ using backend.models;
 using weather_web.backend; // Add this line to import WeatherService
 using Microsoft.AspNetCore.SignalR; // Add this line to import SignalR
 using System.Threading.Tasks;
-using weather_web.Realtime;
 
 namespace weather_web.Controllers
 {
@@ -46,7 +45,7 @@ namespace weather_web.Controllers
                     ViewData["HourlyForecast"] = weatherData.Forecast.forecastday[0].hour;
 
                     // Gửi dữ liệu thời tiết theo thời gian thực qua SignalR
-                    await _hubContext.Clients.All.SendAsync("ReceiveWeatherUpdate", weatherData);
+                    await _hubContext.Clients.All.SendAsync("ReceiveWeatherUpdate", location, weatherData);
                     
                     
                 }
