@@ -10,29 +10,43 @@
   <component name="ChangeListManager">
     <list default="true" id="d28b3f7e-10c2-4349-a5d5-1f07ff31a514" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.weather-web/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.weather-web/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-web/obj/Debug/net8.0/apphost" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/Debug/net8.0/apphost" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-web/obj/Debug/net8.0/weather-web.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/Debug/net8.0/weather-web.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-web/obj/Debug/net8.0/weather-web.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/Debug/net8.0/weather-web.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-web/obj/Debug/net8.0/weather-web.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/Debug/net8.0/weather-web.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-web/obj/Debug/net8.0/weather-web.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/Debug/net8.0/weather-web.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-web/obj/Debug/net8.0/weather-web.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/Debug/net8.0/weather-web.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-web/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-web/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-web/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-web/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-web/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-web/obj/weather-web.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/weather-web.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-web/obj/weather-web.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/weather-web/obj/weather-web.csproj.nuget.g.props" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "thanhquang2004"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;thanhquang2004&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/thanhquang2004/weather-web.git",
-    "accountId": "1af6bf59-ec16-461d-8fc3-709def9b366e"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/thanhquang2004/weather-web.git&quot;,
+    &quot;accountId&quot;: &quot;1af6bf59-ec16-461d-8fc3-709def9b366e&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -41,20 +55,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.weather-web: http.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.weather-web: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/home/quangthanh/.config/JetBrains/Rider2024.1/resharper-host/DecompilerCache&quot;,
+      &quot;/home/quangthanh/.config/JetBrains/Rider2024.1/resharper-host/SourcesCache&quot;,
+      &quot;/home/quangthanh/.local/share/Symbols/src&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.weather-web: http">
     <configuration name="weather-web: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/weather-web/weather-web.csproj" />
@@ -98,6 +119,9 @@
       <workItem from="1720755193255" duration="170000" />
       <workItem from="1722308055953" duration="1655000" />
       <workItem from="1722501264697" duration="1919000" />
+      <workItem from="1722998259259" duration="2794000" />
+      <workItem from="1723778374807" duration="77000" />
+      <workItem from="1723778470353" duration="1489000" />
     </task>
     <servers />
   </component>
