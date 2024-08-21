@@ -2,17 +2,21 @@
 using Microsoft.AspNetCore.Mvc;
 using backend.models;
 using weather_web.backend; // Add this line to import WeatherService
+using Microsoft.AspNetCore.SignalR; // Add this line to import SignalR
+using System.Threading.Tasks;
 
 namespace weather_web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IHubContext<WeatherHub> _hubContext;
+
+        public HomeController(IHubContext<WeatherHub> hubContext)
         {
-            _logger = logger;
+            _hubContext = hubContext;
         }
+
 
         public IActionResult Index()
         {
@@ -39,6 +43,11 @@ namespace weather_web.Controllers
                 {
                     // Hien thi du bao cac gio ke ( thử dữ liệu )
                     ViewData["HourlyForecast"] = weatherData.Forecast.forecastday[0].hour;
+
+                    // Gửi dữ liệu thời tiết theo thời gian thực qua SignalR
+                    await _hubContext.Clients.All.SendAsync("ReceiveWeatherUpdate", location, weatherData);
+                    
+                    
                 }
                 return View("Index", weatherData);
             }
@@ -48,6 +57,9 @@ namespace weather_web.Controllers
                 return View("Index");
             }
         }
+
+        
+
 
         public IActionResult Privacy()
         {
