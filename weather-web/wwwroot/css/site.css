@@ -114,6 +114,7 @@ ul {
     border-radius: 8px;
     box-shadow: 1px 1px 1px;
     padding-bottom: 10px;
+    padding-left:40px;
 }
 
 .main-info-content {
@@ -170,16 +171,12 @@ ul {
     padding: 10px; /* Thêm khoảng cách bên trong */
     text-align: center;
     flex: 1;
+    gap : 15px;
 }
 
     .detail-item img {
-        width: 50px; /* Size of the icons */
+        width: 40px; /* Size of the icons */
         margin-bottom: 5px;
-    }
-
-    .detail-item h5 {
-        margin: 0;
-        font-size: 16px;
     }
 
 .hourly-forecast {
@@ -189,6 +186,7 @@ ul {
     padding: 10px 0;
     border-bottom: 1px solid #444;
     margin-bottom: 10px;
+    align-items:center;
 }
 
 .hourly-item {
@@ -204,12 +202,12 @@ ul {
 }
 
 .hour-icon img {
-    width: 30px; /* Size of the hourly forecast icons */
+    width: 50px; /* Size of the hourly forecast icons */
 }
 
 h3 {
     text-align: center;
-    font-size: 18px;
+    font-size: 25px;
     margin-bottom: 10px;
     border-bottom: 1px;
     padding-bottom: 5px;

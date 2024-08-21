@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "E:\\RepoVS\\weather-web\\weather-web\\wwwroot\\images\\Icon awesome-eye.png",
+      "PackagePath": "staticwebassets\\images\\Icon awesome-eye.png"
+    },
+    {
+      "Id": "E:\\RepoVS\\weather-web\\weather-web\\wwwroot\\images\\Icon awesome-wind.png",
+      "PackagePath": "staticwebassets\\images\\Icon awesome-wind.png"
+    },
+    {
+      "Id": "E:\\RepoVS\\weather-web\\weather-web\\wwwroot\\images\\Icon weather-raindrops.png",
+      "PackagePath": "staticwebassets\\images\\Icon weather-raindrops.png"
+    },
+    {
       "Id": "E:\\RepoVS\\weather-web\\weather-web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -12,4 +12,14 @@
       <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\images\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="wwwroot\images\Icon awesome-eye.png" />
+      <None Include="wwwroot\images\Icon awesome-wind.png" />
+      <None Include="wwwroot\images\Icon weather-raindrops.png" />
+    </ItemGroup>
+
 </Project>

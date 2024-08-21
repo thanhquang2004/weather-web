@@ -37,21 +37,21 @@
                         </section>
                         <div class="location-time">
                             <h2>@Model.Location.name</h2> <!-- Tên vị trí -->
-                            <h5>@Model.Location.localtime</h5> <!-- Thời gian hiện tại -->
+                            <h5 id="current-time"></h5> <!-- Thời gian hiện tại -->
                         </div>
                     </div>
                     <div class="details-forecast-container">
                         <div class="additional-info">
                             <div class="detail-item">
-                                <img src="@($"https:{Model.Current.condition.icon}")" alt="Humidity" /> <!-- Hình ảnh độ ẩm -->
+                                <img src="~/images/Icon weather-raindrops.png" alt="Humidity" /> <!-- Hình ảnh độ ẩm -->
                                 <h5>@Model.Current.humidity%</h5> <!-- Độ ẩm -->
                             </div>
                             <div class="detail-item">
-                                <img src="@($"https:{Model.Current.condition.icon}")" alt="Wind" /> <!-- Hình ảnh gió -->
+                                <img src ="~/images/Icon awesome-wind.png" alt="Wind" /> <!-- Hình ảnh gió -->
                                 <h5>@Model.Current.wind_kph km/h</h5> <!-- Tốc độ gió -->
                             </div>
                             <div class="detail-item">
-                                <img src="@($"https:{Model.Current.condition.text}")" alt="Visibility" /> <!-- Hình ảnh tầm nhìn -->
+                                <img src="~/images/Icon awesome-eye.png" alt="Visibility" /> <!-- Hình ảnh tầm nhìn -->
                                 <h5>@Model.Current.vis_km km</h5> <!-- Tầm nhìn -->
                             </div>
                         </div>
@@ -60,7 +60,6 @@
                         {
                             // Lấy dữ liệu dự đoán thời tiết theo giờ từ ViewData và ép kiểu thành danh sách các đối tượng Hour
                             var hourlyForecast = (List<Hour>)ViewData["HourlyForecast"];
-                            <h3>Hourly Forecast</h3>
                             <div class="hourly-forecast">
                                 @foreach (var hour in hourlyForecast)
                                 {
@@ -87,7 +86,7 @@
                                     <div class="forecast-icon">
                                         <img src="@($"https:{day.day.condition.icon}")" alt="@day.day.condition.text" /> <!-- Weather icon -->
                                     </div>
-                                    <strong class="forecast-date">@day.date</strong>: @day.day.condition.text
+                                    <strong class="forecast-date">@day.date</strong> @day.day.condition.text
                                     <br />
                                     Avg Temp: @day.day.avgtemp_c°C (@day.day.avgtemp_f)°F
                                 </li>
